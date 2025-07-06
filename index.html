@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempera Sprouts</title>
+    <!-- favicon -->
+  <link rel="icon" type="image/png" href="assets/sprouts_favicon.png" />
+
+  <link rel="stylesheet" href="/src/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#eeeeee] text-[#0a0a0a] font-sans text-center">
+ <header class="flex flex-col items-center px-4 py-6 max-w-3xl mx-auto">
+    <div class="text font-bold mb-6">
+      <button class="btn-lang-en active px-2">EN</button>
+      <button class="btn-lang-de px-2">DE</button>
+    </div>
+
+    <img src="assets/sprouts_logo.svg" alt="Tempera Sprouts logo" class="max-w-[620px] w-4/5 my-4" />
+
+    <h1 class="lang-en text-5xl font-serif mt-5">
+      Finally.<br />
+      Double bass strings<br />
+      Designed for KIDS!
+    </h1>
+    <h1 class="lang-de text-5xl font-serif mt-5 hidden">
+      Endlich.<br />
+      Kontrabass-Saiten<br />
+      Für KINDERhände!
+    </h1>
+
+    <p class="lang-en text-lg my-4">COMING SOON.</p>
+    <p class="lang-de text-lg my-4 hidden">BALD ERHÄLTLICH.</p>
+
+    <div class="bg-[#0a0a0a] text-[#eeeeee] rounded-md mt-10 p-8 w-full max-w-2xl">
+      <h2 class="lang-en text-3xl mb-4">
+        Sign up below to stay updated on our launch, and<br />
+        please spread the word to fellow teachers and educators!
+      </h2>
+      <h2 class="lang-de text-3xl mb-4 hidden">
+        Trag dich ein, um zum Launch informiert zu werden –<br />
+        und sag gern Kolleg*innen Bescheid!
+      </h2>
+      <div id="mc_embed_shell"><!-- Mailchimp embed placeholder --></div>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto px-4">
+    <section class="lang-en py-8">
+      <h2 class="text-3xl font-serif mb-4">Regular double bass strings are simply too stiff and heavy for young hands and small bows.</h2>
+      <h2 class="text-3xl font-serif mb-4">How can a child learn to make music on strings even their teacher struggles to play?</h2>
+    </section>
+
+    <img src="assets/sample_foto.jpg" alt="Child playing small double bass" class="w-full max-w-2xl mx-auto my-4 object-cover rounded" />
+
+    <section class="lang-en py-8">
+      <h2 class="text-3xl font-serif mb-4">Tempera Sprouts are thinner, lighter, and more elastic, helping our young bassists discover the joy of music from day one.</h2>
+    </section>
+
+    <section class="lang-de py-8 hidden">
+      <h2 class="text-3xl font-serif mb-4">Gewöhnliche Kontrabass-Saiten sind für Kinderhände zu steif und schwer, besonders mit kleinen Bögen.</h2>
+       <h2 class="text-3xl font-serif mb-4">Wie soll ein Kind Musik gestalten, wenn selbst die Lehrkraft kämpfen muss?</h2>
+    </section>
+
+    <img src="assets/sample_foto.jpg" alt="Child playing small double bass" class="lang-de hidden w-full max-w-2xl mx-auto my-4 object-cover rounded" />
+
+    <section class="lang-de py-8 hidden">
+      <h2 class="text-3xl font-serif mb-4">Tempera Sprouts sind schlanker, leichter und elastischer – so macht Bassspielen vom ersten Tag an Spaß.</h2>
+    </section>
+  </main>
+
+  <footer class="flex flex-col gap-2 items-center p-6 text-sm">
+    <div>© 2025 Tempera Strings ·
+      <a href="https://tempera-strings.com/de" target="_blank" rel="noopener" class="underline">tempera-strings.com</a>
+    </div>
+    <div class="flex gap-6 text-[24px] text-[#6a6a6a]">
+      <a class="hover:text-[#0a0a0a]" href="https://tempera-strings.com/de" aria-label="Website" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i>
+      </a>
+      <a class="hover:text-[#0a0a0a]" href="https://www.instagram.com/temperastrings/" aria-label="Instagram" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a class="hover:text-[#0a0a0a]" href="https://www.facebook.com/temperastrings" aria-label="Facebook" target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const btnEN = document.querySelector('.btn-lang-en');
+    const btnDE = document.querySelector('.btn-lang-de');
+    const allEN = document.querySelectorAll('.lang-en');
+    const allDE = document.querySelectorAll('.lang-de');
+
+    function setLang(showDE) {
+      allEN.forEach(el => el.style.display = showDE ? 'none'  : '');
+      allDE.forEach(el => el.style.display = showDE ? 'block' : 'none');
+      btnEN.classList.toggle('active', !showDE);
+      btnDE.classList.toggle('active',  showDE);
+    }
+    btnEN.addEventListener('click', () => setLang(false));
+    btnDE.addEventListener('click', () => setLang(true));
+  </script>
+</body>
+</html>
