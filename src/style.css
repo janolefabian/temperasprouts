@@ -14,3 +14,8 @@
 h1, h2, h3, h4, h5, h6 {
   @apply font-marian;
 }
+
+.mce_inline_error {
+  background-color: transparent !important;
+  color: red; /* or any color you like */
+}
